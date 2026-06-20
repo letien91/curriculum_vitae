@@ -26,7 +26,8 @@ jobs:
           cache: npm
 
       - run: npm ci
-      - run: GITHUB_PAGES=true npm run build
+      - run: npm run build:pages
+      - run: test -f out/.nojekyll || touch out/.nojekyll
 
       - uses: actions/upload-pages-artifact@v3
         with:

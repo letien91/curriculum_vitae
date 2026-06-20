@@ -7,13 +7,15 @@ const openSans = Open_Sans({
   variable: "--font-open-sans",
 });
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export const metadata: Metadata = {
   title: "Lê Đức Tiến — Mobile Developer",
   description:
     "CV · Kỹ sư Mobile Lead · iOS · Flutter · Team Lead · 12+ năm kinh nghiệm",
   icons: {
-    icon: "/images/logo.png",
-    apple: "/images/logo.png",
+    icon: `${basePath}/images/logo.png`,
+    apple: `${basePath}/images/logo.png`,
   },
 };
 
