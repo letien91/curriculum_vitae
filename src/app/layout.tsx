@@ -8,8 +8,9 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Le Duc Tien — Mobile Developer",
-  description: "CV · Senior Mobile Developer · iOS · Flutter · Team Lead",
+  title: "Lê Đức Tiến — Mobile Developer",
+  description:
+    "CV · Kỹ sư Mobile Lead · iOS · Flutter · Team Lead · 12+ năm kinh nghiệm",
   icons: {
     icon: "/images/logo.png",
     apple: "/images/logo.png",
@@ -22,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="vi" suppressHydrationWarning>
       <body className={`${openSans.variable} antialiased`}>{children}</body>
     </html>
   );

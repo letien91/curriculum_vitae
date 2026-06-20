@@ -6,6 +6,9 @@ import { useLanguage } from "@/context/LanguageContext";
 import { uiLabels } from "@/i18n/labels";
 import { assetPath } from "@/lib/asset-path";
 import { t } from "@/lib/i18n";
+import { ImageLightbox } from "./ImageLightbox";
+
+const PREVIEW_IMAGE_COUNT = 4;
 
 function getTechTags(project: Project): string[] {
   const tags = new Set<string>();
@@ -17,33 +20,72 @@ function getTechTags(project: Project): string[] {
   return Array.from(tags).slice(0, 5);
 }
 
-function ProjectCard({
-  project,
-  compact = false,
+function MobileScreenshot({
+  src,
+  alt,
+  onClick,
+  className = "",
 }: {
-  project: Project;
-  compact?: boolean;
+  src: string;
+  alt: string;
+  onClick?: () => void;
+  className?: string;
 }) {
+  const image = (
+    <img
+      src={assetPath(src)}
+      alt={alt}
+      loading="lazy"
+      className={`h-40 w-auto shrink-0 rounded-lg border border-gray-200 bg-cream-dark object-contain shadow-sm sm:h-44 ${onClick ? "cursor-zoom-in transition hover:ring-2 hover:ring-gold/50" : ""} ${className}`}
+    />
+  );
+
+  if (onClick) {
+    return (
+      <button type="button" onClick={onClick} className="shrink-0">
+        {image}
+      </button>
+    );
+  }
+
+  return image;
+}
+
+function ProjectImageStrip({
+  images,
+  title,
+  maxCount = PREVIEW_IMAGE_COUNT,
+}: {
+  images: string[];
+  title: string;
+  maxCount?: number;
+}) {
+  if (images.length === 0) return null;
+
+  const previewImages = images.slice(0, maxCount);
+
+  return (
+    <div className="overflow-x-auto bg-cream-dark px-3 py-3">
+      <div className="flex gap-2.5">
+        {previewImages.map((image, index) => (
+          <MobileScreenshot
+            key={image}
+            src={image}
+            alt={`${title} screenshot ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ProjectCard({ project }: { project: Project }) {
   const { locale } = useLanguage();
-  const cover = project.images[0];
   const tags = getTechTags(project);
 
   return (
-    <article
-      className={`flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-black/5 ${
-        compact ? "" : ""
-      }`}
-    >
-      {cover && (
-        <div className="aspect-[16/10] overflow-hidden bg-cream-dark">
-          <img
-            src={assetPath(cover)}
-            alt={project.title}
-            className="h-full w-full object-cover object-top"
-            loading="lazy"
-          />
-        </div>
-      )}
+    <article className="flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-black/5">
+      <ProjectImageStrip images={project.images} title={project.title} />
 
       <div className="flex flex-1 flex-col p-4">
         <div className="flex items-start justify-between gap-2">
@@ -78,21 +120,30 @@ function ProjectCard({
 
 function ProjectDetail({ project }: { project: Project }) {
   const { locale } = useLanguage();
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   return (
     <article className="border-b border-gray-100 pb-8 last:border-b-0 last:pb-0">
       {project.images.length > 0 && (
         <div className="mb-4 flex gap-3 overflow-x-auto pb-2">
-          {project.images.map((image) => (
-            <img
+          {project.images.map((image, index) => (
+            <MobileScreenshot
               key={image}
-              src={assetPath(image)}
-              alt={`${project.title} screenshot`}
-              className="h-40 w-auto shrink-0 rounded-lg border border-gray-200 object-cover shadow-sm"
-              loading="lazy"
+              src={image}
+              alt={`${project.title} screenshot ${index + 1}`}
+              onClick={() => setLightboxIndex(index)}
             />
           ))}
         </div>
+      )}
+
+      {lightboxIndex !== null && (
+        <ImageLightbox
+          images={project.images}
+          initialIndex={lightboxIndex}
+          title={project.title}
+          onClose={() => setLightboxIndex(null)}
+        />
       )}
 
       <div className="flex flex-wrap items-center gap-2">
@@ -230,7 +281,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
             >
               {featured.map((project) => (
                 <div key={project.id} className="w-full shrink-0 px-1">
-                  <ProjectCard project={project} compact />
+                  <ProjectCard project={project} />
                 </div>
               ))}
             </div>
