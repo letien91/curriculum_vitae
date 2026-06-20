@@ -28,6 +28,8 @@ export const uiLabels: UiLabels = {
     seeMore: { en: "See More", vi: "Xem thêm" },
     seeLess: { en: "See Less", vi: "Thu gọn" },
     viewAllProjects: { en: "View All Projects", vi: "Xem tất cả dự án" },
+    downloadPdf: { en: "Download PDF", vi: "Tải PDF" },
+    printNow: { en: "Save as PDF", vi: "Lưu PDF" },
     linkStore: { en: "Store Links", vi: "Link Store" },
     testAccount: { en: "Test Account", vi: "Tài khoản test" },
     integratedProjects: { en: "Integrated Projects", vi: "Dự án tích hợp" },
@@ -41,6 +43,10 @@ export const uiLabels: UiLabels = {
     contactDescription: {
       en: "Open to discussing Team Lead and Mobile Engineer opportunities, plus technical solution consulting.",
       vi: "Sẵn sàng trao đổi về các cơ hội Team Lead, Mobile Engineer và tư vấn giải pháp kỹ thuật.",
+    },
+    printHint: {
+      en: 'Choose "Save as PDF" in the print dialog. Enable "Background graphics" for best colors.',
+      vi: 'Chọn "Lưu thành PDF" trong hộp thoại in. Bật "Đồ họa nền" để giữ màu sắc.',
     },
   },
 };

@@ -5,6 +5,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { uiLabels } from "@/i18n/labels";
 import { assetPath } from "@/lib/asset-path";
 import { t } from "@/lib/i18n";
+import { DownloadPdfButton } from "./DownloadPdfButton";
 
 type HeroSectionProps = {
   personal: PersonalInfo;
@@ -101,13 +102,14 @@ export function HeroSection({ personal, stats }: HeroSectionProps) {
           >
             {t(uiLabels.buttons.viewProfile, locale)}
           </a>
-          <a
-            href="#contact"
-            className="rounded border border-white/40 px-4 py-2 text-xs font-bold tracking-wide text-white uppercase transition hover:border-gold hover:text-gold sm:px-5 sm:py-2.5 sm:text-sm"
-          >
-            {t(uiLabels.buttons.contactMe, locale)}
-          </a>
-        </div>
+            <a
+              href="#contact"
+              className="rounded border border-white/40 px-4 py-2 text-xs font-bold tracking-wide text-white uppercase transition hover:border-gold hover:text-gold sm:px-5 sm:py-2.5 sm:text-sm"
+            >
+              {t(uiLabels.buttons.contactMe, locale)}
+            </a>
+            <DownloadPdfButton />
+          </div>
       </div>
     </section>
   );

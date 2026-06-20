@@ -125,10 +125,18 @@ export type UiLabels = {
     | "seeMore"
     | "seeLess"
     | "viewAllProjects"
+    | "downloadPdf"
+    | "printNow"
     | "linkStore"
     | "testAccount"
     | "integratedProjects",
     LocalizedString
   >;
-  misc: Record<"projectsIntegrated" | "copyright" | "contactDescription", LocalizedString>;
+  misc: Record<
+    | "projectsIntegrated"
+    | "copyright"
+    | "contactDescription"
+    | "printHint",
+    LocalizedString
+  >;
 };

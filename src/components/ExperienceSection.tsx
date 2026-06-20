@@ -10,13 +10,21 @@ const INITIAL_VISIBLE = 3;
 
 type ExperienceSectionProps = {
   experiences: Experience[];
+  showAllItems?: boolean;
 };
 
-export function ExperienceSection({ experiences }: ExperienceSectionProps) {
+export function ExperienceSection({
+  experiences,
+  showAllItems = false,
+}: ExperienceSectionProps) {
   const { locale } = useLanguage();
   const [expanded, setExpanded] = useState(false);
-  const visible = expanded ? experiences : experiences.slice(0, INITIAL_VISIBLE);
-  const hasMore = experiences.length > INITIAL_VISIBLE;
+  const visible = showAllItems
+    ? experiences
+    : expanded
+      ? experiences
+      : experiences.slice(0, INITIAL_VISIBLE);
+  const hasMore = !showAllItems && experiences.length > INITIAL_VISIBLE;
 
   return (
     <section id="experience" className="scroll-mt-24">
