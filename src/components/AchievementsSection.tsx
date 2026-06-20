@@ -21,7 +21,7 @@ export function AchievementsSection({ achievements }: AchievementsSectionProps) 
         {t(uiLabels.sections.achievements, locale)}
       </h2>
 
-      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-5 grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
         {achievements.map((item, index) => (
           <article
             key={t(item.title, locale)}

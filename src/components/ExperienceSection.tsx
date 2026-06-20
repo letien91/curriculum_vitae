@@ -25,7 +25,7 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
         {t(uiLabels.sections.experience, locale)}
       </h2>
 
-      <div className="relative mt-8 space-y-8 pl-6">
+      <div className="relative mt-6 space-y-6 pl-6 sm:mt-8">
         <div className="absolute top-2 bottom-2 left-[7px] w-px bg-gold/30" />
 
         {visible.map((experience) => (

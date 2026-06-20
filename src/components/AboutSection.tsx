@@ -23,7 +23,7 @@ export function AboutSection({ personal, valueCards }: AboutSectionProps) {
         {t(uiLabels.sections.about, locale)}
       </h2>
 
-      <div className="mt-5 space-y-4">
+      <div className="mt-4 space-y-3 sm:mt-5 sm:space-y-4">
         {paragraphs.map((paragraph) => (
           <p key={paragraph.slice(0, 40)} className="text-sm leading-relaxed text-gray-700">
             {paragraph}
@@ -31,11 +31,11 @@ export function AboutSection({ personal, valueCards }: AboutSectionProps) {
         ))}
       </div>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2">
+      <div className="mt-6 grid gap-3 sm:grid-cols-2 sm:gap-4">
         {valueCards.map((card, index) => (
           <article
             key={t(card.title, locale)}
-            className="rounded-xl bg-white p-5 shadow-sm ring-1 ring-black/5 transition hover:shadow-md"
+            className="rounded-xl bg-white p-4 shadow-sm ring-1 ring-black/5 transition hover:shadow-md sm:p-5"
           >
             <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-cream-dark text-lg">
               {cardIcons[index] ?? "★"}

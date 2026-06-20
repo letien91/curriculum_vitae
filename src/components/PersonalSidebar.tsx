@@ -14,9 +14,17 @@ type PersonalSidebarProps = {
 function SectionHeading({ title }: { title: string }) {
   return (
     <h2 className="flex items-center gap-2 text-sm font-bold tracking-wide text-navy uppercase">
-      <span className="inline-block h-4 w-1 rounded-full bg-gold" />
+      <span className="inline-block h-4 w-1 shrink-0 rounded-full bg-gold" />
       {title}
     </h2>
+  );
+}
+
+function SidebarCard({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="h-fit w-full rounded-xl bg-white p-4 shadow-sm ring-1 ring-black/5 sm:p-5">
+      {children}
+    </div>
   );
 }
 
@@ -33,14 +41,14 @@ function InfoItem({
 }) {
   const content = (
     <>
-      <span className="mt-0.5 text-base">{icon}</span>
-      <span>
+      <span className="mt-0.5 shrink-0 text-base">{icon}</span>
+      <span className="min-w-0">
         {label && (
           <span className="block text-[11px] font-semibold tracking-wide text-gray-400 uppercase">
             {label}
           </span>
         )}
-        <span className="text-sm text-gray-700">{value}</span>
+        <span className="text-sm break-words text-gray-700">{value}</span>
       </span>
     </>
   );
@@ -69,8 +77,8 @@ export function PersonalSidebar({
   const { locale } = useLanguage();
 
   return (
-    <aside id="skills" className="space-y-8">
-      <div className="rounded-xl bg-white p-5 shadow-sm ring-1 ring-black/5">
+    <aside id="skills" className="flex w-full flex-col gap-5 lg:max-w-[300px] lg:gap-6">
+      <SidebarCard>
         <SectionHeading title={t(uiLabels.sections.personalInfo, locale)} />
         <div className="mt-4 space-y-1">
           <InfoItem
@@ -81,18 +89,18 @@ export function PersonalSidebar({
           <InfoItem icon="☎" value={personal.phone} href={personal.zaloUrl} />
           <InfoItem icon="📍" value={t(personal.location, locale)} />
         </div>
-      </div>
+      </SidebarCard>
 
-      <div className="rounded-xl bg-white p-5 shadow-sm ring-1 ring-black/5">
+      <SidebarCard>
         <SectionHeading title={t(uiLabels.sections.expertise, locale)} />
-        <div className="mt-5 space-y-4">
+        <div className="mt-4 space-y-3">
           {skillBars.map((skill) => (
             <div key={t(skill.name, locale)}>
-              <div className="mb-1.5 flex items-center justify-between text-sm">
-                <span className="font-medium text-gray-800">
+              <div className="mb-1.5 flex items-start justify-between gap-2 text-sm">
+                <span className="min-w-0 font-medium text-gray-800">
                   {t(skill.name, locale)}
                 </span>
-                <span className="text-xs font-semibold text-gold">
+                <span className="shrink-0 text-xs font-semibold text-gold">
                   {skill.level}%
                 </span>
               </div>
@@ -105,24 +113,24 @@ export function PersonalSidebar({
             </div>
           ))}
         </div>
-      </div>
+      </SidebarCard>
 
-      <div className="rounded-xl bg-white p-5 shadow-sm ring-1 ring-black/5">
+      <SidebarCard>
         <SectionHeading title={t(uiLabels.sections.languages, locale)} />
         <ul className="mt-4 space-y-2">
           {languages.map((lang) => (
             <li
               key={t(lang.name, locale)}
-              className="flex items-center justify-between text-sm"
+              className="flex items-center justify-between gap-2 text-sm"
             >
               <span className="font-medium text-gray-800">
                 {t(lang.name, locale)}
               </span>
-              <span className="text-gray-500">{t(lang.level, locale)}</span>
+              <span className="shrink-0 text-gray-500">{t(lang.level, locale)}</span>
             </li>
           ))}
         </ul>
-      </div>
+      </SidebarCard>
     </aside>
   );
 }

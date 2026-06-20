@@ -30,15 +30,17 @@ export function CvPage() {
         <Navbar navName={personal.navName} logo={personal.logo} />
         <HeroSection personal={personal} stats={stats} />
 
-        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[300px_1fr] xl:grid-cols-[320px_1fr]">
-            <PersonalSidebar
-              personal={personal}
-              skillBars={skillBars}
-              languages={languages}
-            />
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
+          <div className="grid items-start gap-6 md:gap-8 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-8 xl:grid-cols-[300px_minmax(0,1fr)]">
+            <div className="lg:sticky lg:top-20">
+              <PersonalSidebar
+                personal={personal}
+                skillBars={skillBars}
+                languages={languages}
+              />
+            </div>
 
-            <div className="space-y-14">
+            <div className="min-w-0 space-y-10 md:space-y-12">
               <AboutSection personal={personal} valueCards={valueCards} />
               <ExperienceSection experiences={experiences} />
               <ProjectsSection projects={projects} />
