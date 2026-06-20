@@ -38,5 +38,9 @@ export const uiLabels: UiLabels = {
       en: "All rights reserved.",
       vi: "Bảo lưu mọi quyền.",
     },
+    contactDescription: {
+      en: "Open to discussing Team Lead and Mobile Engineer opportunities, plus technical solution consulting.",
+      vi: "Sẵn sàng trao đổi về các cơ hội Team Lead, Mobile Engineer và tư vấn giải pháp kỹ thuật.",
+    },
   },
 };

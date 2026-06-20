@@ -31,14 +31,27 @@ export function HeroSection({ personal, stats }: HeroSectionProps) {
             </span>
           </div>
 
-          <h1 className="text-3xl leading-tight font-bold sm:text-4xl lg:text-5xl">
+          <h1 className="text-3xl leading-tight font-bold text-white sm:text-4xl lg:text-5xl">
             {t(personal.heroHeadline, locale)}{" "}
-            <span className="text-gold">{t(personal.heroHighlight, locale)}</span>
+            {t(personal.heroHighlight, locale)}
           </h1>
 
-          <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/75 sm:text-base">
-            {t(personal.heroSubtext, locale)}
+          <p className="mt-4 text-[11px] leading-snug font-semibold tracking-wide text-white/65 sm:text-xs">
+            {t(personal.heroTags, locale)}
           </p>
+
+          <div className="mt-8 grid grid-cols-1 gap-6 border-t border-white/10 pt-8 sm:grid-cols-3 sm:gap-4">
+            {stats.map((stat) => (
+              <div key={stat.value + t(stat.label, locale)}>
+                <div className="text-2xl font-bold text-gold sm:text-3xl">
+                  {stat.value}
+                </div>
+                <div className="mt-1 text-[11px] leading-snug font-semibold tracking-wide text-white/65 uppercase sm:text-xs">
+                  {t(stat.label, locale)}
+                </div>
+              </div>
+            ))}
+          </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -54,28 +67,15 @@ export function HeroSection({ personal, stats }: HeroSectionProps) {
               {t(uiLabels.buttons.contactMe, locale)}
             </a>
           </div>
-
-          <div className="mt-10 grid grid-cols-3 gap-4 border-t border-white/10 pt-8">
-            {stats.map((stat) => (
-              <div key={stat.value + t(stat.label, locale)}>
-                <div className="text-2xl font-bold text-gold sm:text-3xl">
-                  {stat.value}
-                </div>
-                <div className="mt-1 text-[11px] leading-snug font-semibold tracking-wide text-white/65 uppercase sm:text-xs">
-                  {t(stat.label, locale)}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
         <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-[320px] lg:max-w-[360px]">
+          <div className="relative mx-auto aspect-square w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[360px]">
             <div className="absolute inset-0 rounded-full bg-gold/10 blur-3xl" />
             <img
               src={assetPath(personal.avatar)}
               alt={personal.name}
-              className="relative z-10 h-full w-full rounded-2xl object-cover object-top shadow-2xl ring-1 ring-white/10"
+              className="relative z-10 h-full w-full rounded-full object-cover object-top shadow-2xl ring-2 ring-white/20"
             />
           </div>
         </div>

@@ -1,7 +1,9 @@
 "use client";
 
+import type { LocalizedString } from "@/types/cv";
 import { useLanguage } from "@/context/LanguageContext";
 import { uiLabels } from "@/i18n/labels";
+import { assetPath } from "@/lib/asset-path";
 import { t } from "@/lib/i18n";
 
 const navItems = [
@@ -15,17 +17,26 @@ const navItems = [
 ];
 
 type NavbarProps = {
-  shortName: string;
+  navName: LocalizedString;
+  logo: string;
 };
 
-export function Navbar({ shortName }: NavbarProps) {
+export function Navbar({ navName, logo }: NavbarProps) {
   const { locale, setLocale } = useLanguage();
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-navy/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-        <a href="#hero" className="shrink-0 text-sm font-bold tracking-wide text-white sm:text-base">
-          <span className="text-gold">TLD</span> {shortName.replace(/^TLD\s/, "")}
+        <a
+          href="#hero"
+          className="flex shrink-0 items-center gap-2.5 text-sm font-bold tracking-wide text-white sm:text-base"
+        >
+          <img
+            src={assetPath(logo)}
+            alt="LDT"
+            className="h-8 w-8 rounded-lg object-cover sm:h-9 sm:w-9"
+          />
+          <span>{t(navName, locale)}</span>
         </a>
 
         <nav className="hidden items-center gap-5 lg:flex">

@@ -66,7 +66,8 @@ export type Achievement = {
 
 export type PersonalInfo = {
   name: string;
-  shortName: string;
+  navName: LocalizedString;
+  logo: string;
   position: LocalizedString;
   avatar: string;
   gender: LocalizedString;
@@ -80,7 +81,7 @@ export type PersonalInfo = {
   heroBadge: LocalizedString;
   heroHeadline: LocalizedString;
   heroHighlight: LocalizedString;
-  heroSubtext: LocalizedString;
+  heroTags: LocalizedString;
 };
 
 export type CvData = {
@@ -129,5 +130,5 @@ export type UiLabels = {
     | "integratedProjects",
     LocalizedString
   >;
-  misc: Record<"projectsIntegrated" | "copyright", LocalizedString>;
+  misc: Record<"projectsIntegrated" | "copyright" | "contactDescription", LocalizedString>;
 };

@@ -55,9 +55,7 @@ export function ContactFooter({ personal }: ContactFooterProps) {
               {t(uiLabels.sections.contact, locale)}
             </h2>
             <p className="mt-2 max-w-md text-sm text-white/70">
-              {locale === "vi"
-                ? "Sẵn sàng trao đổi về dự án mobile, freelance hoặc cơ hội hợp tác dài hạn."
-                : "Open to discussing mobile projects, freelance work, or long-term collaboration."}
+              {t(uiLabels.misc.contactDescription, locale)}
             </p>
           </div>
 

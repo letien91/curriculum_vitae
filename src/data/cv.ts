@@ -13,16 +13,22 @@ const L = {
   account: { en: "account", vi: "tài khoản" },
   password: { en: "password", vi: "mật khẩu" },
   domain: { en: "domain", vi: "domain" },
-  teamLead: { en: "Team Lead", vi: "Team Lead" },
-  pmDev: { en: "PM / Developer", vi: "PM / Developer" },
-  developer: { en: "Developer", vi: "Developer" },
+  teamLead: { en: "Team Lead", vi: "Trưởng nhóm" },
+  pmDev: { en: "PM / Developer", vi: "Quản lý dự án / Lập trình viên" },
+  developer: { en: "Developer", vi: "Lập trình viên" },
+  leadDeveloper: { en: "Lead Developer", vi: "Trưởng nhóm mobile" },
+  projectManager: { en: "Project Manager", vi: "Quản lý dự án" },
   mobileLead: { en: "Mobile Team Lead", vi: "Trưởng nhóm Mobile" },
 };
 
 export const cvData: CvData = {
   personal: {
     name: "Tien Le Duc",
-    shortName: "TLD Tien Le Duc",
+    navName: {
+      en: "Tien Le Duc",
+      vi: "Lê Đức Tiến",
+    },
+    logo: "/images/logo.png",
     position: {
       en: "Senior Mobile Developer · Team Lead",
       vi: "Senior Mobile Developer · Team Lead",
@@ -62,23 +68,23 @@ Sở hữu nền tảng vững chắc về hệ thống thời gian thực (real
       en: "and guide the development team.",
       vi: "và hướng dẫn đội ngũ phát triển.",
     },
-    heroSubtext: {
-      en: "12 years in mobile, 5+ years on Flutter, and a track record of leading teams from architecture to App Store release.",
-      vi: "12 năm mobile, 5+ năm Flutter, và kinh nghiệm dẫn dắt team từ kiến trúc đến phát hành trên App Store.",
+    heroTags: {
+      en: "iOS • Android • Flutter • Architecture • Realtime Systems",
+      vi: "iOS • Android • Flutter • Kiến trúc • Hệ thống realtime",
     },
   },
   stats: [
     {
       value: "12+",
-      label: { en: "Years Mobile", vi: "Năm mobile" },
+      label: { en: "Years Experience", vi: "Năm kinh nghiệm" },
     },
     {
       value: "30+",
-      label: { en: "Projects Shipped", vi: "Dự án triển khai" },
+      label: { en: "Mobile Products Delivered", vi: "Sản phẩm mobile triển khai" },
     },
     {
       value: "5+",
-      label: { en: "Years Flutter", vi: "Năm Flutter" },
+      label: { en: "Years Team Leadership", vi: "Năm lãnh đạo nhóm" },
     },
   ],
   skillBars: [
@@ -183,11 +189,30 @@ Sở hữu nền tảng vững chắc về hệ thống thời gian thực (real
       to: "now",
       toNow: true,
       company: "Vinsmart Future",
-      role: L.developer,
+      role: {
+        en: "Solution Engineer & Developer",
+        vi: "Kỹ sư giải pháp & Lập trình viên",
+      },
       items: [
         {
-          en: "Own Flutter development for My THACO, the internal app used by Truong Hai Group employees across the corporation and its member companies.",
-          vi: "Phụ trách phát triển Flutter cho My THACO — ứng dụng nội bộ phục vụ nhân viên Tập đoàn Trường Hải và các công ty thành viên.",
+          en: "Design and propose technical solutions for mobile products.",
+          vi: "Xây dựng và đề xuất giải pháp kỹ thuật cho các sản phẩm mobile.",
+        },
+        {
+          en: "Develop core components, especially chat and real-time communication systems.",
+          vi: "Tham gia phát triển các thành phần cốt lõi, đặc biệt là hệ thống chat và giao tiếp thời gian thực.",
+        },
+        {
+          en: "Resolve performance issues, memory leaks, and improve application stability.",
+          vi: "Xử lý các vấn đề về hiệu năng, memory leak và tối ưu độ ổn định của ứng dụng.",
+        },
+        {
+          en: "Enhance user experience through UI improvements and animations.",
+          vi: "Nâng cao trải nghiệm người dùng thông qua cải tiến giao diện và animation.",
+        },
+        {
+          en: "Provide technical support, code reviews, and mentor developers on the team.",
+          vi: "Hỗ trợ kỹ thuật, review code và hướng dẫn các lập trình viên trong nhóm.",
         },
       ],
     },
@@ -195,15 +220,42 @@ Sở hữu nền tảng vững chắc về hệ thống thời gian thực (real
       from: "2024",
       to: "2026",
       company: "Freelance",
-      role: L.pmDev,
+      role: {
+        en: "Project Manager | Lead Developer | Developer",
+        vi: "Quản lý dự án | Trưởng nhóm mobile | Lập trình viên",
+      },
       items: [
         {
-          en: "Acted as PM and lead developer on StockBeat, a cyclical stock-trading platform, from product definition through store release.",
-          vi: "Đảm nhiệm PM và lead developer cho StockBeat — nền tảng giao dịch cổ phiếu theo chu kỳ, từ định nghĩa sản phẩm đến phát hành store.",
+          en: "Delivered fintech, enterprise, and social networking applications for multiple clients.",
+          vi: "Triển khai ứng dụng fintech, doanh nghiệp và mạng xã hội cho nhiều khách hàng.",
         },
         {
-          en: "Built a Flutter-based social product for the Malaysian market and supported My THACO through its early rollout phase.",
-          vi: "Phát triển sản phẩm social Flutter cho thị trường Malaysia và hỗ trợ My THACO trong giai đoạn triển khai ban đầu.",
+          en: "Led end-to-end development from requirement analysis and solution design to production deployment.",
+          vi: "Dẫn dắt phát triển end-to-end từ phân tích yêu cầu, thiết kế giải pháp đến triển khai production.",
+        },
+        {
+          en: "Worked directly with founders and business stakeholders to transform ideas into scalable products.",
+          vi: "Làm việc trực tiếp với founder và stakeholder để biến ý tưởng thành sản phẩm có thể mở rộng quy mô.",
+        },
+        {
+          en: "Built and maintained applications used by thousands of users across Vietnam and Southeast Asia.",
+          vi: "Xây dựng và duy trì ứng dụng phục vụ hàng nghìn người dùng tại Việt Nam và Đông Nam Á.",
+        },
+        {
+          en: "Key Projects:",
+          vi: "Dự án tiêu biểu:",
+        },
+        {
+          en: "StockBeat – Financial analytics and stock trading platform.",
+          vi: "StockBeat – Nền tảng phân tích tài chính và giao dịch cổ phiếu.",
+        },
+        {
+          en: "My THACO – Enterprise ecosystem application for THACO employees.",
+          vi: "My THACO – Ứng dụng hệ sinh thái doanh nghiệp cho nhân viên THACO.",
+        },
+        {
+          en: "Social Networking Platform – Real-time social platform for Malaysian market.",
+          vi: "Social Networking Platform – Nền tảng social realtime cho thị trường Malaysia.",
         },
       ],
     },
