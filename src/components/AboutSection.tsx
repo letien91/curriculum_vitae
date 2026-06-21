@@ -31,24 +31,26 @@ export function AboutSection({ personal, valueCards }: AboutSectionProps) {
         ))}
       </div>
 
-      <div className="mt-6 grid gap-3 sm:grid-cols-2 sm:gap-4">
-        {valueCards.map((card, index) => (
-          <article
-            key={t(card.title, locale)}
-            className="rounded-xl bg-white p-4 shadow-sm ring-1 ring-black/5 transition hover:shadow-md sm:p-5"
-          >
-            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-cream-dark text-lg">
-              {cardIcons[index] ?? "★"}
-            </div>
-            <h3 className="text-sm font-bold tracking-wide text-navy uppercase">
-              {t(card.title, locale)}
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-gray-600">
-              {t(card.description, locale)}
-            </p>
-          </article>
-        ))}
-      </div>
+      {valueCards.length > 0 && (
+        <div className="mt-6 grid gap-3 sm:grid-cols-2 sm:gap-4">
+          {valueCards.map((card, index) => (
+            <article
+              key={t(card.title, locale)}
+              className="rounded-xl bg-white p-4 shadow-sm ring-1 ring-black/5 transition hover:shadow-md sm:p-5"
+            >
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-cream-dark text-lg">
+                {cardIcons[index] ?? "★"}
+              </div>
+              <h3 className="text-sm font-bold tracking-wide text-navy uppercase">
+                {t(card.title, locale)}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                {t(card.description, locale)}
+              </p>
+            </article>
+          ))}
+        </div>
+      )}
     </section>
   );
 }

@@ -123,36 +123,7 @@ Sở hữu nền tảng vững chắc về hệ thống thời gian thực (real
       level: { en: "Professional", vi: "Thành thạo công việc" },
     },
   ],
-  valueCards: [
-    {
-      title: { en: "Leadership", vi: "Lãnh đạo" },
-      description: {
-        en: "Led mobile teams on Flutter products at VTechnology and guided delivery from architecture to release.",
-        vi: "Dẫn dắt team mobile tại VTechnology và điều phối triển khai từ kiến trúc đến phát hành.",
-      },
-    },
-    {
-      title: { en: "Technical Depth", vi: "Chiều sâu kỹ thuật" },
-      description: {
-        en: "Deep experience across iOS, Flutter, realtime messaging, VoIP, and reusable SDK design.",
-        vi: "Kinh nghiệm sâu về iOS, Flutter, messaging realtime, VoIP và thiết kế SDK tái sử dụng.",
-      },
-    },
-    {
-      title: { en: "Product Ownership", vi: "Sở hữu sản phẩm" },
-      description: {
-        en: "Acted as PM and lead developer on StockBeat, owning the product from idea to store launch.",
-        vi: "Đảm nhiệm PM và lead developer cho StockBeat, chịu trách nhiệm sản phẩm từ ý tưởng đến store.",
-      },
-    },
-    {
-      title: { en: "Continuous Growth", vi: "Học hỏi liên tục" },
-      description: {
-        en: "Evolved from Objective-C apps to Flutter, Node.js backends, and cross-platform game clients.",
-        vi: "Phát triển từ app Objective-C sang Flutter, backend Node.js và client game đa nền tảng.",
-      },
-    },
-  ],
+  valueCards: [],
   achievements: [
     {
       title: { en: "12+ Years Mobile", vi: "12+ năm Mobile" },
@@ -169,10 +140,10 @@ Sở hữu nền tảng vững chắc về hệ thống thời gian thực (real
       },
     },
     {
-      title: { en: "Enterprise Rollouts", vi: "Triển khai doanh nghiệp" },
+      title: { en: "Enterprise Project", vi: "Dự án doanh nghiệp" },
       description: {
-        en: "Delivered My THACO for Truong Hai Group and CRM tools for sales teams.",
-        vi: "Triển khai My THACO cho Tập đoàn Trường Hải và CRM cho đội ngũ kinh doanh.",
+        en: "Built a cyclical stock tracking platform combining market trends with cycle signals — PM and lead developer from idea to store launch.",
+        vi: "Xây dựng nền tảng theo dõi cổ phiếu theo chu kỳ, kết hợp xu hướng thị trường với tín hiệu chu kỳ — PM và lead developer từ ý tưởng đến phát hành trên các Store.",
       },
     },
     {

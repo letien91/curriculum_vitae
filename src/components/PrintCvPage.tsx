@@ -150,9 +150,9 @@ function PrintCvContent() {
 
           <div className="min-w-0 space-y-10 print:space-y-8">
             <AboutSection personal={personal} valueCards={valueCards} />
+            <AchievementsSection achievements={achievements} />
             <ExperienceSection experiences={experiences} showAllItems />
             <ProjectsPrintSection projects={projects} />
-            <AchievementsSection achievements={achievements} />
             <ContactFooter personal={personal} />
           </div>
         </div>

@@ -28,7 +28,7 @@ export const uiLabels: UiLabels = {
     seeMore: { en: "See More", vi: "Xem thêm" },
     seeLess: { en: "See Less", vi: "Thu gọn" },
     viewAllProjects: { en: "View All Projects", vi: "Xem tất cả dự án" },
-    downloadPdf: { en: "Download PDF", vi: "Tải PDF" },
+    downloadPdf: { en: "Save CV", vi: "Lưu CV" },
     printNow: { en: "Save as PDF", vi: "Lưu PDF" },
     linkStore: { en: "Store Links", vi: "Link Store" },
     testAccount: { en: "Test Account", vi: "Tài khoản test" },

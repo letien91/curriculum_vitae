@@ -42,9 +42,9 @@ export function CvPage() {
 
             <div className="min-w-0 space-y-10 md:space-y-12">
               <AboutSection personal={personal} valueCards={valueCards} />
+              <AchievementsSection achievements={achievements} />
               <ExperienceSection experiences={experiences} />
               <ProjectsSection projects={projects} />
-              <AchievementsSection achievements={achievements} />
               <ContactFooter personal={personal} />
             </div>
           </div>

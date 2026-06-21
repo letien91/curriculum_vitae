@@ -9,10 +9,10 @@ import { t } from "@/lib/i18n";
 const navItems = [
   { id: "hero", key: "home" as const },
   { id: "about", key: "about" as const },
+  { id: "achievements", key: "achievements" as const },
   { id: "experience", key: "experience" as const },
   { id: "projects", key: "projects" as const },
   { id: "skills", key: "skills" as const },
-  { id: "achievements", key: "achievements" as const },
   { id: "contact", key: "contact" as const },
 ];
 
