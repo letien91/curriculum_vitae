@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { PrintCvPage } from "@/components/PrintCvPage";
 
 export const metadata = {
@@ -6,5 +7,9 @@ export const metadata = {
 };
 
 export default function PrintPage() {
-  return <PrintCvPage />;
+  return (
+    <Suspense fallback={null}>
+      <PrintCvPage />
+    </Suspense>
+  );
 }

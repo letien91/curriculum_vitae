@@ -131,6 +131,13 @@ export function PersonalSidebar({
           ))}
         </ul>
       </SidebarCard>
+
+      <SidebarCard>
+        <SectionHeading title={t(uiLabels.sections.education, locale)} />
+        <p className="mt-4 text-sm leading-relaxed text-gray-700">
+          {t(personal.education, locale)}
+        </p>
+      </SidebarCard>
     </aside>
   );
 }

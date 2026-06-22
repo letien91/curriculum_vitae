@@ -6,12 +6,23 @@ import { uiLabels } from "@/i18n/labels";
 import { assetPath } from "@/lib/asset-path";
 import { t } from "@/lib/i18n";
 
-function ProjectPrintBlock({ project }: { project: Project }) {
+type ProjectsPrintSectionProps = {
+  projects: Project[];
+  showImages?: boolean;
+};
+
+function ProjectPrintBlock({
+  project,
+  showImages,
+}: {
+  project: Project;
+  showImages: boolean;
+}) {
   const { locale } = useLanguage();
 
   return (
     <article className="cv-print-project break-inside-avoid border-b border-gray-200 pb-6 last:border-b-0">
-      {project.images.length > 0 && (
+      {showImages && project.images.length > 0 && (
         <div className="mb-3 flex flex-wrap gap-2">
           {project.images.map((image, index) => (
             <img
@@ -86,11 +97,10 @@ function ProjectPrintBlock({ project }: { project: Project }) {
   );
 }
 
-type ProjectsPrintSectionProps = {
-  projects: Project[];
-};
-
-export function ProjectsPrintSection({ projects }: ProjectsPrintSectionProps) {
+export function ProjectsPrintSection({
+  projects,
+  showImages = true,
+}: ProjectsPrintSectionProps) {
   const { locale } = useLanguage();
 
   return (
@@ -101,7 +111,11 @@ export function ProjectsPrintSection({ projects }: ProjectsPrintSectionProps) {
       </h2>
       <div className="mt-6 space-y-8">
         {projects.map((project) => (
-          <ProjectPrintBlock key={project.id} project={project} />
+          <ProjectPrintBlock
+            key={project.id}
+            project={project}
+            showImages={showImages}
+          />
         ))}
       </div>
     </section>

@@ -42,8 +42,8 @@ export function HeroSection({ personal, stats }: HeroSectionProps) {
   const { locale } = useLanguage();
 
   return (
-    <section id="hero" className="relative overflow-hidden bg-navy text-white">
-      <div className="pointer-events-none absolute inset-0 opacity-20">
+    <section id="hero" className="relative bg-navy text-white">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-20">
         <div className="absolute top-10 right-10 text-[80px] font-bold text-white/10 select-none sm:text-[120px]">
           {"</>"}
         </div>

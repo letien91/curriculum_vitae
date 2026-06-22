@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useSearchParams } from "next/navigation";
 import { cvData } from "@/data/cv";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { PersonalSidebar } from "@/components/PersonalSidebar";
@@ -105,6 +106,8 @@ function PrintHero() {
 }
 
 function PrintCvContent() {
+  const searchParams = useSearchParams();
+  const showImages = searchParams.get("images") !== "none";
   const {
     personal,
     skillBars,
@@ -152,7 +155,7 @@ function PrintCvContent() {
             <AboutSection personal={personal} valueCards={valueCards} />
             <AchievementsSection achievements={achievements} />
             <ExperienceSection experiences={experiences} showAllItems />
-            <ProjectsPrintSection projects={projects} />
+            <ProjectsPrintSection projects={projects} showImages={showImages} />
             <ContactFooter personal={personal} />
           </div>
         </div>

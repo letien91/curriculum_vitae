@@ -1,4 +1,7 @@
-export function printPagePath(): string {
+export type PrintImageMode = "full" | "none";
+
+export function printPagePath(mode: PrintImageMode = "full"): string {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-  return `${basePath}/print`;
+  const query = mode === "none" ? "?images=none" : "";
+  return `${basePath}/print${query}`;
 }

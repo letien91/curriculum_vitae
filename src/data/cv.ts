@@ -40,8 +40,8 @@ export const cvData: CvData = {
     email: "ldtien.tr@gmail.com",
     location: { en: "Ha Tinh, Vietnam", vi: "Hà Tĩnh, Việt Nam" },
     education: {
-      en: "Bachelor of Science in Information Technology, University of Engineering and Technology",
-      vi: "Cử nhân Công nghệ Thông tin, Trường Đại học Công nghệ",
+      en: "Information Technology Engineer - Vietnam National University, Hanoi",
+      vi: "Kỹ sư công nghệ thông tin - Đại học Quốc gia Hà Nội",
     },
     summary: {
       en: `Lead Mobile Engineer with 12+ years of experience delivering mobile products across social networking, fintech, entertainment, communication, and enterprise domains.
